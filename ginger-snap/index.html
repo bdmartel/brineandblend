@@ -83,8 +83,17 @@ nav .back:hover { color: var(--text); text-decoration: none; }
 }
 .product-visual {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.product-visual img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 .bottle-graphic {
   width: 200px;
@@ -335,8 +344,8 @@ footer p {
 <div class="product-hero">
   <div class="product-hero-inner">
     <div class="product-visual">
-      <img src="gingersnap.png" alt="Brine & Blend Ginger Snap" style="max-width:100%; border-radius:10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); margin-bottom:1.5rem;">
-      <img src="bottles.jpg" alt="Ginger Snap bottles" style="max-width:100%; border-radius:10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+      <img src="gingersnap.png" alt="Brine & Blend Ginger Snap">
+      <img src="bottles.jpg" alt="Ginger Snap bottles">
     </div>
     <div class="product-info">
       <h1>Ginger Snap</h1>
