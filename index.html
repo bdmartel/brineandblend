@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brine & Blend - Lacto Fermented Hot Sauces</title>
+<title>Brine & Blend</title>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -15,7 +15,6 @@
   --text-dim: #999;
   --accent: #c0392b;
   --accent-light: #e74c3c;
-  --gold: #d4a847;
   --green: #4a7c59;
 }
 
@@ -29,45 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--gold); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* NAV */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: rgba(26,26,26,0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #333;
-  padding: 0 2rem;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-nav .brand {
-  font-size: 0.85rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-nav .brand span { color: var(--accent); }
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-nav ul a {
-  color: var(--text-dim);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-nav ul a:hover { color: var(--text); text-decoration: none; }
+a { color: inherit; text-decoration: none; }
 
 /* HERO */
 .hero {
@@ -77,7 +38,7 @@ nav ul a:hover { color: var(--text); text-decoration: none; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6rem 2rem 4rem;
+  padding: 4rem 2rem;
   background: linear-gradient(180deg, #1a1a1a 0%, #2b1a1a 50%, #1a1a1a 100%);
 }
 .hero h1 {
@@ -99,56 +60,16 @@ nav ul a:hover { color: var(--text); text-decoration: none; }
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--text-dim);
-  margin-bottom: 2rem;
-}
-.hero .sub {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--green);
-  border: 1px solid var(--green);
-  padding: 0.4rem 1.2rem;
-  border-radius: 2px;
-}
-.scroll-hint {
-  margin-top: 3rem;
-  animation: bob 2s ease-in-out infinite;
-  color: var(--text-dim);
-  font-size: 1.5rem;
-}
-@keyframes bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
 }
 
-/* SECTIONS */
-section { padding: 5rem 2rem; }
-section:nth-child(odd) { background: var(--bg); }
-section:nth-child(even) { background: var(--bg-alt); }
-.section-inner {
-  max-width: 960px;
-  margin: 0 auto;
-}
-.section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-.section-title {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 2rem;
-  line-height: 1.15;
-}
-
-/* PRODUCT GRID */
+/* PRODUCTS */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  margin-top: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
 }
 .product-card {
   background: var(--bg-card);
@@ -156,8 +77,6 @@ section:nth-child(even) { background: var(--bg-alt); }
   border-radius: 4px;
   padding: 2rem;
   transition: border-color 0.2s, transform 0.2s;
-  display: flex;
-  flex-direction: column;
 }
 .product-card:hover {
   border-color: var(--accent);
@@ -168,35 +87,29 @@ section:nth-child(even) { background: var(--bg-alt); }
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
-.product-card .heat {
-  font-size: 0.75rem;
-  color: var(--accent-light);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-.product-card .ingredients {
-  font-size: 0.85rem;
+.product-card .sub {
+  font-size: 0.8rem;
   color: var(--text-dim);
-  margin-bottom: 1rem;
-  flex: 1;
-}
-.product-card .desc {
-  font-size: 0.9rem;
-  line-height: 1.5;
 }
 .product-card .link {
   margin-top: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--text-dim);
 }
 
 /* MANIFESTO */
+.manifesto-section {
+  padding: 5rem 2rem;
+  background: var(--bg-alt);
+}
 .manifesto {
+  max-width: 720px;
+  margin: 0 auto;
   column-count: 2;
   column-gap: 2.5rem;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   line-height: 1.75;
   color: var(--text-dim);
   text-transform: uppercase;
@@ -211,303 +124,74 @@ section:nth-child(even) { background: var(--bg-alt); }
   font-weight: 700;
 }
 
-/* PROCESS */
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.process-step {
-  text-align: center;
-  padding: 1.5rem;
-}
-.process-step .num {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.process-step h4 {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
-}
-.process-step p {
-  font-size: 0.82rem;
-  color: var(--text-dim);
-  line-height: 1.5;
-}
-
-/* INGREDIENT TABLE */
-.ingredient-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
-}
-.ingredient-table th {
-  background: #333;
-  color: var(--text);
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  padding: 0.6rem 1rem;
-  text-align: left;
-  font-weight: 600;
-}
-.ingredient-table td {
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #2a2a2a;
-  color: var(--text-dim);
-}
-.ingredient-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
-.ingredient-table tr:hover td { background: rgba(255,255,255,0.04); }
-
-/* ABOUT */
-.about-text {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-dim);
-  max-width: 640px;
-}
-.about-text p { margin-bottom: 1.5rem; }
-
 /* FOOTER */
 footer {
   padding: 3rem 2rem;
   text-align: center;
   border-top: 1px solid #333;
-  background: var(--bg);
 }
-footer .brand-footer {
-  font-size: 0.85rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-footer .brand-footer span { color: var(--accent); }
 footer p {
   font-size: 0.75rem;
   color: var(--text-dim);
   letter-spacing: 0.1em;
 }
 
-/* RESPONSIVE */
 @media (max-width: 640px) {
-  nav ul { gap: 1rem; }
-  nav ul a { font-size: 0.7rem; }
-  section { padding: 3rem 1.25rem; }
+  .products { grid-template-columns: 1fr; padding: 3rem 1.25rem; }
   .manifesto { column-count: 1; }
-  .products { grid-template-columns: 1fr; }
-}
-
-/* MOBILE NAV */
-.nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
-@media (max-width: 640px) {
-  .nav-toggle { display: block; }
-  nav ul {
-    display: none;
-    position: absolute;
-    top: 56px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background: rgba(26,26,26,0.98);
-    padding: 1rem 2rem;
-    gap: 1rem;
-    border-bottom: 1px solid #333;
-  }
-  nav ul.open { display: flex; }
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="brand">Brine <span>&</span> Blend</div>
-  <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">&#9776;</button>
-  <ul>
-    <li><a href="#sauces">Sauces</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#story">Story</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
 <div class="hero">
   <h1>Brine<span class="amp">&</span>Blend</h1>
   <p class="tagline">Lacto Fermented Hot Sauces</p>
-  <p class="sub">A Grow Together Hot Sauce Company</p>
-  <a href="#sauces" class="scroll-hint">&#8595;</a>
 </div>
 
-<!-- SAUCES -->
-<section id="sauces">
-  <div class="section-inner">
-    <p class="section-label">The Lineup</p>
-    <h2 class="section-title">Small Batch. Real Soil. Slow Fire.</h2>
-    <div class="products">
+<div class="products">
 
-      <div class="product-card">
-        <h3>Reaper Beet</h3>
-        <p class="heat">Extreme Heat</p>
-        <p class="ingredients">Carolina Reaper + Beet</p>
-        <p class="desc">The world's hottest pepper meets deep, earthy beet. Fermented to a violet purple with layers of heat that don't quit.</p>
-      </div>
-
-      <a href="ginger-snap/" style="text-decoration:none;color:inherit">
-      <div class="product-card">
-        <h3>Ginger Snap</h3>
-        <p class="heat">Bold Heat</p>
-        <p class="ingredients">Ginger + Fermented Chili Peppers + Dark Spices</p>
-        <p class="desc">Zesty ginger snap mellows into rich warmth. Fermentation builds natural acidity while a final splash of vinegar sharpens the complexity. Fiery, tangy, layered.</p>
-        <p class="link">View Details &rarr;</p>
-      </div>
-      </a>
-
-      <div class="product-card">
-        <h3>Aji Apple</h3>
-        <p class="heat">Medium Heat</p>
-        <p class="ingredients">Aji Pepper + Apple</p>
-        <p class="desc">Bright aji heat balanced by tart fermented apple. A sauce that works on everything from roasted pork to sharp cheddar. Approachable with depth.</p>
-      </div>
-
-      <div class="product-card">
-        <h3>Chipper Chap</h3>
-        <p class="heat">Moderate Heat</p>
-        <p class="ingredients">Habanero + Pear + Honey</p>
-        <p class="desc">A pleasant fellow of a sauce. Fruity habanero warmth rounded by fermented pear and local honey. Quite agreeable on eggs, cheese, and grain bowls.</p>
-      </div>
-
-    </div>
+  <div class="product-card">
+    <h3>Reaper Beet</h3>
+    <p class="sub">Carolina Reaper + Beet</p>
   </div>
-</section>
 
-<!-- PROCESS -->
-<section id="process">
-  <div class="section-inner">
-    <p class="section-label">How It's Made</p>
-    <h2 class="section-title">Grown, Fermented, Blended</h2>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="num">01</div>
-        <h4>Grow</h4>
-        <p>Peppers, fruits, and vegetables grown in New Hampshire soil. Started from seed, tended by hand, picked when ready.</p>
-      </div>
-      <div class="process-step">
-        <div class="num">02</div>
-        <h4>Brine</h4>
-        <p>Each ingredient lacto-fermented separately in glass at 2.9% salt. Weeks of slow transformation by natural bacteria.</p>
-      </div>
-      <div class="process-step">
-        <div class="num">03</div>
-        <h4>Blend</h4>
-        <p>Fermented components combined in tested ratios. pH verified below 4.0. A splash of vinegar sharpens the finish.</p>
-      </div>
-      <div class="process-step">
-        <div class="num">04</div>
-        <h4>Bottle</h4>
-        <p>Small batch, hand-bottled. Every jar numbered. Same zip code from field to label.</p>
-      </div>
-    </div>
-
-    <h3 style="margin-top:3rem; margin-bottom:0.5rem; font-size:1.1rem;">Fermented Ingredient Library</h3>
-    <p style="font-size:0.82rem; color:var(--text-dim); margin-bottom:1rem;">Each ingredient is grown, harvested, and brine-fermented separately before blending.</p>
-    <table class="ingredient-table">
-      <thead>
-        <tr><th>Peppers</th><th>Fruits</th><th>Vegetables</th><th>Other</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Carolina Reaper</td>
-          <td>Apple</td>
-          <td>Beet</td>
-          <td>Garlic</td>
-        </tr>
-        <tr>
-          <td>Aji (Lemon, Mango)</td>
-          <td>Pear</td>
-          <td>Carrot</td>
-          <td>Onion</td>
-        </tr>
-        <tr>
-          <td>Habanero</td>
-          <td>Cantaloupe / Melon</td>
-          <td>&nbsp;</td>
-          <td>Local Honey</td>
-        </tr>
-        <tr>
-          <td>Jalapeno</td>
-          <td>Strawberry</td>
-          <td>&nbsp;</td>
-          <td>Maple Syrup</td>
-        </tr>
-        <tr>
-          <td>Scotch Bonnet</td>
-          <td>Grape</td>
-          <td>&nbsp;</td>
-          <td>Apple Cider</td>
-        </tr>
-        <tr>
-          <td>Thai Chili</td>
-          <td>Banana</td>
-          <td>&nbsp;</td>
-          <td>White Vinegar</td>
-        </tr>
-        <tr>
-          <td>Lemon Drop</td>
-          <td>Ginger</td>
-          <td>&nbsp;</td>
-          <td>Sea Salt</td>
-        </tr>
-      </tbody>
-    </table>
+  <a href="ginger-snap/">
+  <div class="product-card">
+    <h3>Ginger Snap</h3>
+    <p class="sub">Ginger + Fermented Chili + Dark Spices</p>
+    <p class="link">View &rarr;</p>
   </div>
-</section>
+  </a>
 
-<!-- STORY / MANIFESTO -->
-<section id="story">
-  <div class="section-inner">
-    <p class="section-label">Say More, With Less</p>
-    <h2 class="section-title">This Bottle Isn't Just Hot Sauce</h2>
-    <div class="manifesto">
-      <p><strong>Hot sauce from a place, not a factory.</strong> Grown in small gardens, raised in real soil, tended by hand. Not out of nostalgia but out of necessity. Flavor doesn't come from scale; it comes from attention. Every pepper in this batch was started from seed in New Hampshire soil, watered by actual weather, not plumbing. Picked when it was ready, not when a truck needed to roll.</p>
-
-      <p><strong>This bottle stands for growing together.</strong> Not as a slogan. As a practice. Peppers, melons, herbs, garlic: they come from spaces where soil is built, not depleted. Where cover crops aren't an afterthought but a rhythm. Where compost is made from what the land gives back. Where buckwheat, rye, clover, and oak leaves shape the earth for whatever comes next.</p>
-
-      <p><strong>Locally grown, locally cut, locally fermented.</strong> The work happens in the same zip code as the fields. What gets harvested in Wilton or Peterborough gets prepped there too. No dehydrated imports, no "natural flavor," just real produce doing what real produce does when you treat it right.</p>
-
-      <p><strong>This sauce is for food that matters.</strong> For eggs in a cast iron pan at 325F. For greens you grew yourself. For cantaloupe you didn't expect to become a ferment but did. For pork belly braised until it just holds its shape. For any meal made with enough intention that you'd notice if something tasted fake.</p>
-
-      <p><strong>No pretense, no corny taglines.</strong> Just the belief that small-scale food is worth doing. That farming can be creative. That flavor is built from the ground up. That heat should say something. Not shout but speak. This is sauce that doesn't try to be massive. It tries to be true.</p>
-
-      <p><strong>Say more, with less.</strong> This bottle isn't just hot sauce. It's a record of a season, a system, and a way of working that doesn't cut corners. If you know, you know. If you don't, you will when you taste it.</p>
-    </div>
+  <div class="product-card">
+    <h3>Aji Apple</h3>
+    <p class="sub">Aji Pepper + Apple</p>
   </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-inner">
-    <p class="section-label">About</p>
-    <h2 class="section-title">Southern New Hampshire</h2>
-    <div class="about-text">
-      <p>Brine & Blend is a one-person operation in the hills of southern New Hampshire. Peppers and produce are grown on small plots in Wilton and Peterborough, fermented in glass jars and a four-foot ceramic crock, and blended by hand.</p>
-      <p>The brand lives under <strong>Grow Together</strong>, a community-based agricultural project focused on regenerative growing, starter plant sales, and small-batch food. The sauces are a natural extension of the same soil, the same seasons, and the same attention that goes into everything else.</p>
-      <p>Every batch is numbered. Every ingredient is tracked from seed to jar. The fermentation runs long enough to develop depth but not so long it loses its edge. Watched by a person, not a sensor.</p>
-    </div>
+  <div class="product-card">
+    <h3>Chipper Chap</h3>
+    <p class="sub">Habanero + Pear + Honey</p>
   </div>
-</section>
+
+</div>
+
+<div class="manifesto-section">
+  <div class="manifesto">
+    <p><strong>Hot sauce from a place, not a factory.</strong> Grown in small gardens, raised in real soil, tended by hand. Not out of nostalgia but out of necessity. Flavor doesn't come from scale; it comes from attention. Every pepper in this batch was started from seed in New Hampshire soil, watered by actual weather, not plumbing. Picked when it was ready, not when a truck needed to roll.</p>
+
+    <p><strong>This bottle stands for growing together.</strong> Not as a slogan. As a practice. Peppers, melons, herbs, garlic: they come from spaces where soil is built, not depleted. Where cover crops aren't an afterthought but a rhythm. Where compost is made from what the land gives back.</p>
+
+    <p><strong>Locally grown, locally cut, locally fermented.</strong> The work happens in the same zip code as the fields. What gets harvested in Wilton or Peterborough gets prepped there too. No dehydrated imports, no "natural flavor," just real produce doing what real produce does when you treat it right.</p>
+
+    <p><strong>This sauce is for food that matters.</strong> For eggs in a cast iron pan at 325F. For greens you grew yourself. For cantaloupe you didn't expect to become a ferment but did. For pork belly braised until it just holds its shape.</p>
+
+    <p><strong>Say more, with less.</strong> This bottle isn't just hot sauce. It's a record of a season, a system, and a way of working that doesn't cut corners. If you know, you know. If you don't, you will when you taste it.</p>
+  </div>
+</div>
 
 <footer>
-  <p class="brand-footer">Brine <span>&</span> Blend</p>
-  <p>Lacto Fermented Hot Sauces &middot; Wilton, NH</p>
-  <p style="margin-top:0.5rem">A Grow Together Hot Sauce Company</p>
+  <p>Brine & Blend &middot; Wilton, NH</p>
 </footer>
 
 </body>
